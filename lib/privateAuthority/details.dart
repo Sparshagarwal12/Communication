@@ -1,52 +1,21 @@
-import 'package:communication/privateAuthority/details.dart';
+import 'package:communication/privateAuthority/addVehical.dart';
+import 'package:communication/privateAuthority/myVehicals.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class PrivateDashboard extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: PrivateDashboard(),
-    );
-  }
+  _PrivateDashboard createState() => _PrivateDashboard();
 }
 
-
-class Example extends StatefulWidget {
-  @override
-  _Example createState() => _Example();
-}
-
-class _Example extends State<Example> {
-
+class _PrivateDashboard extends State<PrivateDashboard> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Likes',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Profile',
-      style: optionStyle,
-    ),
+  List<Widget> _widgetOptions = <Widget>[
+    MyVehicals(),
+    AddVehical(),
+    AddVehical(),
+    AddVehical(),
   ];
 
   @override
@@ -71,20 +40,20 @@ class _Example extends State<Example> {
                 tabBackgroundColor: Colors.grey[800],
                 tabs: [
                   GButton(
-                    icon: LineIcons.dashboard,
-                    text: 'DashBoard',
+                    icon: LineIcons.bicycle,
+                    text: 'My Vehicals',
                   ),
                   GButton(
                     icon: LineIcons.train,
                     text: 'Live Status',
                   ),
                   GButton(
-                    icon: LineIcons.calendar,
-                    text: 'Planner',
+                    icon: LineIcons.car,
+                    text: 'Add Vehicals',
                   ),
                   GButton(
-                    icon: LineIcons.location_arrow,
-                    text: 'My Location',
+                    icon: LineIcons.user,
+                    text: 'Users',
                   ),
                 ],
                 selectedIndex: _selectedIndex,
