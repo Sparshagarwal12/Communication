@@ -136,6 +136,7 @@ class _MyVehicals extends State<MyVehicals> {
                       );
                     });
               } else {
+                //spinner
                 return Text("data");
               }
             },
