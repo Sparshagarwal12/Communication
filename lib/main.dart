@@ -1,3 +1,4 @@
+import 'package:communication/User/promo.dart';
 import 'package:communication/User/userDaashboard.dart';
 import 'package:communication/privateAuthority/details.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ class _Example extends State<Example> {
     UserDashboard(),
     UserDashboard(),
     UserDashboard(),
-    UserDashboard(),
+    Promo()
   ];
 
   @override
@@ -71,7 +72,7 @@ class _Example extends State<Example> {
                   ),
                   GButton(
                     icon: LineIcons.location_arrow,
-                    text: 'My Location',
+                    text: 'Benefits',
                   ),
                 ],
                 selectedIndex: _selectedIndex,

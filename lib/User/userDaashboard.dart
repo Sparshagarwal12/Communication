@@ -22,12 +22,26 @@ Future<Map> getUri() async {
 }
 
 class _UserDashboard extends State<UserDashboard> {
+  DateTime selectedDate = DateTime.now();
+
+  Future<Null> _selectDate(BuildContext context) async {
+    final DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2015, 8),
+        lastDate: DateTime(2101));
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: ListView(
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(left: 50, right: 50, bottom: 30),
@@ -75,6 +89,24 @@ class _UserDashboard extends State<UserDashboard> {
                   ),
                 ),
               )),
+          SizedBox(height: 20),
+          Container(
+              child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                selectedDate.toString(),
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(width: 10),
+              GestureDetector(
+                onTap: () {
+                  _selectDate(context);
+                },
+                child: Icon(Icons.calendar_today),
+              )
+            ],
+          )),
           SizedBox(height: 30),
           Container(
               width: MediaQuery.of(context).size.width / 2,

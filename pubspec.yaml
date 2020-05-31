@@ -25,7 +25,7 @@ dependencies:
   line_icons: ^0.2.0
   firebase_auth:
   cloud_firestore:
-
+  qr_flutter:
   firebase:
 
   # The following adds the Cupertino Icons font to your application.

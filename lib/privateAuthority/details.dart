@@ -1,4 +1,5 @@
 import 'package:communication/privateAuthority/addVehical.dart';
+import 'package:communication/privateAuthority/benefit.dart';
 import 'package:communication/privateAuthority/myVehicals.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -15,7 +16,7 @@ class _PrivateDashboard extends State<PrivateDashboard> {
     MyVehicals(),
     AddVehical(),
     AddVehical(),
-    AddVehical(),
+    Benefit()
   ];
 
   @override
@@ -53,7 +54,7 @@ class _PrivateDashboard extends State<PrivateDashboard> {
                   ),
                   GButton(
                     icon: LineIcons.user,
-                    text: 'Users',
+                    text: 'Benefit',
                   ),
                 ],
                 selectedIndex: _selectedIndex,
