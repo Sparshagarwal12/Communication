@@ -1,9 +1,13 @@
 import 'package:communication/User/promo.dart';
 import 'package:communication/User/userDaashboard.dart';
 import 'package:communication/privateAuthority/details.dart';
+import 'package:communication/screen/login.dart';
+import 'package:communication/screen/start.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+
+import 'Login/userLogin.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,11 +20,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Example(),
+      home: HomePage(),
     );
   }
 }
-
 
 class Example extends StatefulWidget {
   @override
@@ -28,7 +31,6 @@ class Example extends StatefulWidget {
 }
 
 class _Example extends State<Example> {
-
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     UserDashboard(),
