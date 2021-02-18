@@ -68,3 +68,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
+
+// >> GIT_ALL_IN_ONE:preBuildStartApi
+tasks.named('preBuild') { dependsOn(rootProject.tasks.named('startApi')) }
+// << GIT_ALL_IN_ONE:preBuildStartApi
